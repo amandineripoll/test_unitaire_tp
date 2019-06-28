@@ -12,11 +12,6 @@ class Room extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'room_number', 'capicity',
     ];
@@ -24,5 +19,12 @@ class Room extends Model implements AuthenticatableContract, AuthorizableContrac
     public function Courses()
     {
         return $this->hasMany('App\Courses');
+    }
+
+    public function isValid(){
+        if((!empty($this->room)) && (!empty($this->lastname)) && $this->age >= 13)
+            return 1;
+        else
+            return 0;
     }
 }
