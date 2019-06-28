@@ -21,10 +21,4 @@ class Room extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->hasMany('App\Courses');
     }
 
-    public function isValid(){
-        if((!empty($this->room)) && (!empty($this->lastname)) && $this->age >= 13)
-            return 1;
-        else
-            return 0;
-    }
 }

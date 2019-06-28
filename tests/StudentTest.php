@@ -21,4 +21,11 @@ class StudentTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function studentMock($valid){
+        $studentmock = $this->createMock(Student::class);
+        $studentmock->method('isValid')
+        ->willReturn($valid);
+        return $studentmock;
+      }
 }
