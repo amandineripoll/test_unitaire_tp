@@ -11,34 +11,13 @@
 |
 */
 // TEACHER
-$router->get('/teacher/{id}', ['uses' => 'TeacherController@show'], function () use ($router) {
-    return $router->app->version();
-});
-$router->post('/teacher/post/{id}', ['uses' => 'TeacherController@edit'], function () use ($router) {
-    return $router->app->version();
-});
-$router->delete('/teacher/{id}', ['uses' => 'TeacherController@delete'], function () use ($router) {
-    return $router->app->version();
-});
+$router->post('/teacher', 'TeacherController@createNewTeacher');
 
 //STUDENT
-$router->get('/student/{id}', ['uses' => 'StudentController@show'], function () use ($router) {
-    return $router->app->version();
-});
-$router->post('/student/post/{id}', ['uses' => 'StudentController@edit'], function () use ($router) {
-    return $router->app->version();
-});
-$router->delete('/student/{id}', ['uses' => 'StudentController@delete'], function () use ($router) {
-    return $router->app->version();
-});
+$router->post('/student', 'StudentController@createNewStudent');
 
-// ROOM
-$router->get('/room/{id}', ['uses' => 'RoomController@show'], function () use ($router) {
-    return $router->app->version();
-});
-$router->post('/room/post/{id}', ['uses' => 'RoomController@edit'], function () use ($router) {
-    return $router->app->version();
-});
-$router->delete('/room/{id}', ['uses' => 'RoomController@delete'], function () use ($router) {
-    return $router->app->version();
-});
+//ROOMS
+$router->post('/rooms', 'RoomController@createNewRoom');
+
+//COURSES
+$router->post('/course', 'CourseController@createNewCourse');
