@@ -19,4 +19,14 @@ abstract class CourseTest extends Laravel\Lumen\Testing\TestCase {
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function testCourseDate()
+    {
+        $this->post('/course', ['name' => 'english', 'date' => '2019-07-25'], ['Content-type' => 'application/json']);
+
+        var_dump($this->response->getContent());die();
+        $this->assertEquals(
+            $this->app->version(), $this->response->getContent()
+        );
+    }
 }

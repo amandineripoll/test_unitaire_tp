@@ -21,4 +21,29 @@ class StudentTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function testStudentLastname()
+    {   
+
+        $this->post('/student',['firstname' => 'Leo', 'lastname' => '', 'email' => 'leo.wattier@free.fr', 'birthdate' => '1993-09-23'], ['Content-type'=> 'application/json']);
+
+        var_dump($this->response->getContent());die();
+
+        $this->assertEquals(
+            $this->app->version(), $this->response->getContent()
+        );
+    }
+
+    public function testStudentEmail()
+    {   
+
+        $this->post('/student',['firstname' => 'Leo', 'lastname' => '', 'email' => 'leo.wattierfreefr', 'birthdate' => '1993-09-23'], ['Content-type'=> 'application/json']);
+
+        var_dump($this->response->getContent());die();
+
+        $this->assertEquals(
+            $this->app->version(), $this->response->getContent()
+        );
+    }
+
 }
