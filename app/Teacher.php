@@ -34,7 +34,7 @@ class Teacher extends Model implements JWTSubject, AuthenticatableContract, Auth
      */
     public function posts() 
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Course');
     }
 
 }
