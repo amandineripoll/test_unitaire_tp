@@ -29,4 +29,11 @@ abstract class CourseTest extends Laravel\Lumen\Testing\TestCase {
             $this->app->version(), $this->response->getContent()
         );
     }
+       
+    public function coursesMock($valid){
+        $coursesmock = $this->createMock(Courses::class);
+        $coursesmock->method('isValid')
+        ->willReturn($valid);
+        return $coursesmock;
+    }
 }

@@ -46,4 +46,10 @@ class StudentTest extends TestCase
         );
     }
 
+    public function studentMock($valid){
+        $studentmock = $this->createMock(Student::class);
+        $studentmock->method('isValid')
+        ->willReturn($valid);
+        return $studentmock;
+      }
 }
