@@ -28,19 +28,14 @@ class CourseController extends BaseController
         $course = new Course();
         $course->name = $request->name;
         $course->date = $request->date;
-        $course->save();
-        
-        if($course->save())
-        {
-            $response = response()->json(
-                [
-                    'response' => [
-                        'created' => true,
-                        'CourseId' => $course->id
-                    ]
-                ], 201
-            );
-        }
+        $response = response()->json(
+            [
+                'response' => [
+                    'created' => true,
+                    'id' => $course->id
+                ]
+            ], 201
+        );
         return $response;
     }
 
