@@ -1,8 +1,9 @@
 <?php
 
-require 'Room.php';
+use App\Room;
+use Illuminate\Foundation\Testing\TestCase;
 
-class RoomTest extends Laravel\Lumen\Testing\TestCase
+abstract class RoomTest extends Laravel\Lumen\Testing\TestCase
 {
     private $room;
 
