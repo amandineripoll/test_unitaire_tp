@@ -1,0 +1,24 @@
+<?php
+use App\Student;
+use Laravel\Lumen\Testing\DatabaseMigrations;
+use Laravel\Lumen\Testing\DatabaseTransactions;
+
+class StudentTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testStudentName()
+    {   
+
+        $this->post('/student',['firstname' => 'Leo', 'lastname' => 'Wattier', 'email' => 'leo.wattier@free.fr', 'birthdate' => '1993-09-23'], ['Content-type'=> 'application/json']);
+
+        var_dump($this->response->getContent());die();
+
+        $this->assertEquals(
+            $this->app->version(), $this->response->getContent()
+        );
+    }
+}

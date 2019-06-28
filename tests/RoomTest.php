@@ -1,6 +1,6 @@
 <?php
 
-require 'Room.php';
+use App\Room;
 
 class RoomTest extends Laravel\Lumen\Testing\TestCase
 {

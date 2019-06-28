@@ -31,19 +31,16 @@ class StudentController extends Controller
         $student->lastname = $request->lastname;
         $student->birthdate = $request->birthdate;
         $student->email = $request->email;
-        $student->save();
         
-        if($student->save())
-        {
-            $response = response()->json(
-                [
-                    'response' => [
-                        'created' => true,
-                        'userId' => $student->id
-                    ]
-                ], 201
-            );
-        }
+        $response = response()->json(
+            [
+                'response' => [
+                    'created' => true,
+                    'id' => $student->id
+                ]
+            ], 201
+        );
+
         return $response;
     }
 }
